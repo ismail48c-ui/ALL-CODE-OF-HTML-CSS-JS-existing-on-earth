@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An interactive HTML, CSS and JavaScript learning playground with examples and a live preview.">
+  <title>CodeVerse — Web Development Playground</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="CodeVerse home">
+        <span class="brand-mark">&lt;/&gt;</span>
+        <span>Code<span class="brand-accent">Verse</span><small>WEB PLAYGROUND</small></span>
+      </a>
+      <div class="side-label">LEARN & EXPLORE</div>
+      <button class="nav-item active" data-view="dashboard"><span>⌂</span> Overview</button>
+      <button class="nav-item" data-view="html"><span>▣</span> HTML Library <em>HTML5</em></button>
+      <button class="nav-item" data-view="css"><span>✦</span> CSS Library <em>CSS3</em></button>
+      <button class="nav-item" data-view="js"><span>⌘</span> JavaScript Library <em>JS</em></button>
+      <button class="nav-item" data-view="playground"><span>⌁</span> Live Playground</button>
+      <div class="sidebar-bottom">
+        <div class="mini-card">
+          <div class="mini-icon">⚡</div>
+          <strong>Keep building.</strong>
+          <p>Small experiments turn into big skills.</p>
+          <button id="goPlayground">Open playground ↗</button>
+        </div>
+        <div class="side-foot">CODEVERSE <span>v1.0</span></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+        <div class="crumb"><span>Workspace</span><b>/</b><strong id="crumbTitle">Overview</strong></div>
+        <div class="top-actions">
+          <div class="status"><span></span> Browser-ready</div>
+          <button class="icon-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">☼</button>
+          <a class="github-pill" href="#playground" id="topPlay">Try code <span>↗</span></a>
+        </div>
+      </header>
+
+      <section class="view active-view" id="view-dashboard">
+        <div class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="pulse"></span> YOUR WEB DEV WORKSPACE</div>
+            <h1>Build ideas.<br><span>Make them real.</span></h1>
+            <p>A hands-on library for HTML, CSS and JavaScript — explore concepts, copy examples, and test your own code in one place.</p>
+            <div class="hero-actions">
+              <button class="primary-btn" data-jump="playground">Launch playground <span>→</span></button>
+              <button class="secondary-btn" data-jump="html">Explore library</button>
+            </div>
+            <div class="hero-note"><span>✦</span> Learn by changing the code, not just reading it.</div>
+          </div>
+          <div class="code-art" aria-label="Decorative code sample">
+            <div class="code-window">
+              <div class="window-bar"><i></i><i></i><i></i><span>hello-world.js</span></div>
+              <div class="code-lines">
+                <p><b>01</b> <span class="purple">const</span> idea = <span class="green">"your idea"</span>;</p>
+                <p><b>02</b> <span class="purple">function</span> <span class="blue">build</span>() {</p>
+                <p><b>03</b> &nbsp;&nbsp;<span class="pink">return</span> <span class="green">"something awesome"</span>;</p>
+                <p><b>04</b> }</p>
+                <p><b>05</b> <span class="blue">console</span>.log(build());<span class="cursor">▍</span></p>
+              </div>
+              <div class="code-window-foot"><span>● JavaScript</span><span>UTF-8</span><span>Ln 5, Col 24</span></div>
+            </div>
+            <div class="float-chip chip-html"><b>5</b><span>HTML</span></div>
+            <div class="float-chip chip-css"><b>#</b><span>CSS</span></div>
+            <div class="float-chip chip-js"><b>JS</b><span>JavaScript</span></div>
+          </div>
+        </div>
+
+        <div class="section-heading">
+          <div><div class="eyebrow">THE TOOLKIT</div><h2>Three languages. Endless possibilities.</h2></div>
+          <span class="muted">Start anywhere</span>
+        </div>
+        <div class="language-grid">
+          <article class="language-card html-card">
+            <div class="lang-top"><span class="lang-icon">5</span><span class="tag">STRUCTURE</span></div>
+            <h3>HTML Library</h3><p>Build the structure of a webpage with elements, forms, media, tables and semantic markup.</p>
+            <div class="card-meta"><span>10 topic groups</span><span>↗</span></div>
+            <button class="card-link" data-jump="html">Explore HTML <span>→</span></button>
+          </article>
+          <article class="language-card css-card">
+            <div class="lang-top"><span class="lang-icon">#</span><span class="tag">DESIGN</span></div>
+            <h3>CSS Library</h3><p>Style your interfaces with layout systems, typography, responsive rules and animation.</p>
+            <div class="card-meta"><span>10 topic groups</span><span>↗</span></div>
+            <button class="card-link" data-jump="css">Explore CSS <span>→</span></button>
+          </article>
+          <article class="language-card js-card">
+            <div class="lang-top"><span class="lang-icon">JS</span><span class="tag">INTERACTION</span></div>
+            <h3>JavaScript Library</h3><p>Add logic and behavior with functions, arrays, events, DOM, and asynchronous code.</p>
+            <div class="card-meta"><span>12 topic groups</span><span>↗</span></div>
+            <button class="card-link" data-jump="js">Explore JavaScript <span>→</span></button>
+          </article>
+        </div>
+
+        <div class="section-heading lower-heading">
+          <div><div class="eyebrow">QUICK START</div><h2>Jump into a code example</h2></div>
+          <button class="text-btn" data-jump="playground">Open editor ↗</button>
+        </div>
+        <div class="quick-grid">
+          <button class="quick-card" data-example="button"><span class="quick-symbol blue-bg">▣</span><span><strong>Interactive button</strong><small>HTML + CSS + JavaScript</small></span><span class="quick-arrow">↗</span></button>
+          <button class="quick-card" data-example="gradient"><span class="quick-symbol purple-bg">◈</span><span><strong>Gradient background</strong><small>CSS gradients and layout</small></span><span class="quick-arrow">↗</span></button>
+          <button class="quick-card" data-example="loop"><span class="quick-symbol green-bg">⟳</span><span><strong>JavaScript loop</strong><small>Loops and console output</small></span><span class="quick-arrow">↗</span></button>
+        </div>
+        <footer class="footer">Made for curious minds <span>✦</span> Keep experimenting.</footer>
+      </section>
+
+      <section class="view" id="view-html">
+        <div class="page-intro"><div class="eyebrow">REFERENCE LIBRARY / 01</div><h1>HTML <span>Library</span></h1><p>Explore the building blocks of the web. Choose a topic to see a short explanation and a working snippet.</p></div>
+        <div class="library-toolbar"><label class="searchbox"><span>⌕</span><input id="htmlSearch" placeholder="Search HTML topics..." autocomplete="off"></label><span class="result-count" id="htmlCount"></span></div>
+        <div class="topic-grid" id="htmlTopics"></div>
+      </section>
+
+      <section class="view" id="view-css">
+        <div class="page-intro"><div class="eyebrow">REFERENCE LIBRARY / 02</div><h1>CSS <span>Library</span></h1><p>Explore selectors, layouts, responsive design, effects, transitions and animation.</p></div>
+        <div class="library-toolbar"><label class="searchbox"><span>⌕</span><input id="cssSearch" placeholder="Search CSS topics..." autocomplete="off"></label><span class="result-count" id="cssCount"></span></div>
+        <div class="topic-grid" id="cssTopics"></div>
+      </section>
+
+      <section class="view" id="view-js">
+        <div class="page-intro"><div class="eyebrow">REFERENCE LIBRARY / 03</div><h1>JavaScript <span>Library</span></h1><p>From your first variable to DOM events and asynchronous JavaScript, explore practical snippets.</p></div>
+        <div class="library-toolbar"><label class="searchbox"><span>⌕</span><input id="jsSearch" placeholder="Search JavaScript topics..." autocomplete="off"></label><span class="result-count" id="jsCount"></span></div>
+        <div class="topic-grid" id="jsTopics"></div>
+      </section>
+
+      <section class="view" id="view-playground">
+        <div class="page-intro playground-intro"><div><div class="eyebrow">EXPERIMENT MODE</div><h1>Live <span>Playground</span></h1><p>Edit the code and run it to see your changes in the preview.</p></div><div class="run-note"><span class="pulse"></span> Runs in your browser</div></div>
+        <div class="editor-toolbar"><div class="editor-tabs"><button class="editor-tab active" data-editor="html">▣ HTML</button><button class="editor-tab" data-editor="css">✦ CSS</button><button class="editor-tab" data-editor="js">⌘ JS</button></div><div class="editor-actions"><button class="secondary-btn small" id="resetCode">Reset</button><button class="primary-btn small" id="runCode">▶ Run code</button></div></div>
+        <div class="playground-grid">
+          <div class="editor-panel">
+            <div class="panel-title"><span class="live-dot"></span><strong id="editorTitle">index.html</strong><span class="panel-menu">⋯</span></div>
+            <textarea id="codeEditor" spellcheck="false" aria-label="Code editor"></textarea>
+            <div class="editor-foot"><span id="editorLanguage">HTML</span><span>UTF-8 <b>•</b> Editable</span></div>
+          </div>
+          <div class="preview-panel">
+            <div class="panel-title"><strong>Live Preview</strong><span class="preview-state"><i></i> Preview</span><button class="refresh-btn" id="refreshPreview" title="Refresh preview">↻</button></div>
+            <iframe id="previewFrame" title="Code preview" sandbox="allow-scripts"></iframe>
+            <div class="preview-foot"><span>Output window</span><span id="previewStatus">Ready to run</span></div>
+          </div>
+        </div>
+        <div class="playground-tip"><span>✦</span><p><strong>Pro tip:</strong> Try changing the heading text, a color value, or a JavaScript message. Click <b>Run code</b> to update the preview.</p></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
